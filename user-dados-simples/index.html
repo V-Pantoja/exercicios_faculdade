@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+
+</head>
+<body>
+  <div>
+    <section>
+      <h1>Dados Pessoais</h1>
+
+      <label for="y-name">Nome</label>
+      <input id="y-name" name="y-name" type="text">
+      
+      <label for="y-cep">Endereço</label>
+      <input id="y-cep" name="y-cep" type="text">
+
+      <label for="y-age">Idade</label>
+      <input id="y-age" name="y-age" type="number">
+
+      <div>
+        <button onclick="mostrarInfo()">Resultado</button>
+      </div>
+    </section>
+
+    <section>
+      <h1 id="titulo">. . .</h1>
+      <h4 id="conteudo"></h4>
+    </section>
+  </div>
+  
+<script>
+
+  function mostrarInfo() {
+    let name, cep, age, tage, tit, conte
+
+    // Pegar dados dos input(s)
+    name = document.getElementById('y-name').value.trim() // trim (remove os espaços EXTRAS no inicio, final da frase e até no meio)
+    cep = document.getElementById('y-cep').value.trim()
+    age = document.getElementById('y-age').value
+
+    // Pegar o elemento (Apenas especificar ele na variavel)
+    tit = document.getElementById('titulo')
+    conte = document.getElementById('conteudo')
+
+    // Mostrar os dados recebidos, inserindo-os no elemento
+    tit.innerHTML = `>>> Resultado <<<`
+    conte.innerHTML = `Nome = ${name}<br/> Endereço = ${cep}</br> Idade = ${age}`
+  }
+
+</script>
+</body>
+</html>
