@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conjectura de Collatz</title>
+</head>
+<body>
+  <div>
+    <h1>Conjectura de Collatz</h1>
+    <h6>Calculadora automática para a famosa Conjectura de Collatz. Esta conjetura pode ser resumida da seguinte forma: «Comece com um número inteiro positivo n. Se n for par, divida por 2. Se n for ímpar, multiplique por 3 e some 1. Repita este processo com o novo valor de n, terminando quando atingimos n = 1." O surpreendente deste algoritmo é que não importa qual o número inicial que escolhamos, os últimos 3 números serão sempre 4, 2 e 1». Insere-se na categoria dos Números Maravilhosos e imensos estudiosos têm tentado explicar este fenómeno, considerado de extrema importância e beleza matemática.</h6>
+
+    <input id="userN" type="number" placeholder="Numero Inteiro"/>
+    <button onclick="calcularN()">Calcular</button>
+
+    <div>
+      <h4 id="firstN"></h4>
+      <div id="outN"></div>
+    </div>
+
+  </div>
+  
+  <script>
+
+    function calcularN() {
+      let userN, firstN, outN, novoP
+
+      userN = Number(document.getElementById('userN').value)
+      firstN = document.getElementById('firstN')
+      firstN.innerHTML = `${userN}:`
+      outN = document.getElementById('outN')
+
+      do {
+        if (userN % 2 == 0) {
+          userN /= 2
+        }
+        else {
+          userN = (userN * 3) + 1
+        }
+        // Criar paragrafos com cada valor novo de num
+        novoP = document.createElement('p') // cria um elemento <p>
+        novoP.appendChild(document.createTextNode(`${userN}`)) // cria o texto(conteudo) no elemento <p> com o valor do resultado da condição
+
+        outN.appendChild(novoP) // inserir dentro da <div id="outN">
+
+        console.log(userN) // caso queira ver no console.log
+      } while (userN > 1)
+      
+
+    }
+  </script>
+</body>
+</html>
