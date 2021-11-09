@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Média</title>
+
+    <link rel="stylesheet" href="./media.css">
+
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Média do Aluno</h1>
+        </header>
+    
+        <main>
+            <section id="informacao">
+                <div id="txt1">
+                    <label for="nomeAluno">Informe o nome do aluno: </label><br/>
+                    <input type="text" id="nomeAluno" name="numeroNotas" />
+                </div>
+                <div id="txt2">
+                    <label for="numeroNotas">Quantidade de notas: (Max. 5)</label><br/>   
+                    <input type="number" id="numeroNotas" name="numeroNotas" />
+                </div>
+            </section>
+            <button onclick="campoNota()">Inserir notas</button>
+            <button onclick="limparCampos()">Limpar</button>
+    
+            <section id="innerNota">
+            </section>
+    
+        </main>
+    </div>
+    
+    <script src="./media.js"></script>
+</body>
+</html>
